@@ -4,15 +4,21 @@ package pco.melody;
 
 public class Note {
 
+    // Atributos
+
     private Acc acc;
     private int octave;
     private Pitch pitch;
     private double duration;
 
+    // construtor para facilitar programacao
+
     public Note(double duration) {
 
-        this(duration, Pitch.S, 0, (Acc)null);
+        this(duration, Pitch.S, 0, null);
     }
+
+    // construtor
 
     public Note(double duration, Pitch pitch, int octave, Acc acc) {
 
@@ -21,6 +27,8 @@ public class Note {
         this.octave=octave;
         this.duration=duration;
     }
+
+    // getters and setters
 
     public Pitch getPitch() {
         return this.pitch;
@@ -44,7 +52,7 @@ public class Note {
 
     public String toString() {
 
-        return this.duration + "" + this.pitch + "" + this.octave + "" + this.acc;
+        return this.duration + " " + this.pitch + " " + this.octave + " " + this.acc;
   }
 
     public Note octaveDown() {
