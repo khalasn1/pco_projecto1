@@ -15,10 +15,10 @@ public class Note {
 
     public Note(double duration, Pitch pitch, int octave, Acc acc) {
 
-        this.duration=duration;
+        this.acc=acc;
         this.pitch=pitch;
         this.octave=octave;
-        this.acc=acc;
+        this.duration=duration;
     }
 
     public Pitch getPitch() {

@@ -12,5 +12,5 @@ public enum Acc {
   /** Sharp. */
   SHARP,
   /** Flat. */
-  FLAT; 
+  FLAT
 }

@@ -1,32 +1,46 @@
 package pco.melody;
 
-// COMPLETE ESTA CLASSE ... 
+// COMPLETE ESTA CLASSE ...
+
 public class Melody {
 
+    private Note[] numberNotes;
+    private String title;
+    private String author;
+
+
   public Melody(String title, String author, int n) {
+
+      Note[] SeqNotes;
+      SeqNotes = new Note[n];
+
+      for(int i=0; i<n; i++){
+          SeqNotes[i] = new Note(0);
+      }
+
+      this.title=title;
+      this.author=author;
+      this.numberNotes=SeqNotes;
 
   }
 
   public String getTitle() {
-
-    return "";
+      return this.title;
   }
 
   public void setTitle(String title) {
-
+      this.title=title;
   }
 
   public String getAuthor() {
-
-    return "";
+    return this.author;
   }
 
   public void setAuthor(String author) {
-
+    this.author=author;
   }
 
   public int notes() {
-
     return -1;
   }
 

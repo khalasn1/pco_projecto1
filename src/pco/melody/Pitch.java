@@ -22,5 +22,5 @@ public enum Pitch {
   /** F ("Sol") */
   G,
   /** Special constant for silence. */
-  S;
+  S
 }
