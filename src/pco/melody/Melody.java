@@ -4,7 +4,8 @@ package pco.melody;
 
 public class Melody {
 
-    private Note[] numberNotes;
+    private Note[] SeqNotes;
+    private int n;
     private String title;
     private String author;
 
@@ -14,13 +15,14 @@ public class Melody {
       Note[] SeqNotes;
       SeqNotes = new Note[n];
 
-      for(int i=0; i<n; i++){
+      for (int i = 0; i <n ; i++) {
           SeqNotes[i] = new Note(0);
       }
 
+      this.n=n;
       this.title=title;
       this.author=author;
-      this.numberNotes=SeqNotes;
+      this.SeqNotes=SeqNotes;
 
   }
 
@@ -41,35 +43,51 @@ public class Melody {
   }
 
   public int notes() {
-    return -1;
+    return this.n;
   }
 
   public Note get(int index) {
-    return null;
+    return this.SeqNotes[index];
   }
 
   public void set(int index, Note note) {
-    // COMPLETAR
+      this.SeqNotes[index] = note;
   }
 
   public double getDuration() {
-    return -1;
+      double dur = 0;
+
+      for (int i = 0; i < this.n; i++) {
+          dur = dur + this.SeqNotes[this.n].getDuration();
+      }
+
+      return dur;
   }
 
   public void reverse() {
-
+      for (int i = 0; i <this.n/2; i++) {
+          Note temp = this.SeqNotes[i];
+          this.SeqNotes[i]=this.SeqNotes[this.n - i - 1];
+          this.SeqNotes[this.n - i -1] = temp;
+      }
   }
 
   public void changeTempo(double factor) {
-
+      for (int i = 0; i < this.n; i++) {
+          this.SeqNotes[this.n].changeTempo(factor);
+      }
   }
 
   public void octaveDown() {
-
+      for (int i = 0; i <this.n ; i++) {
+          this.SeqNotes[this.n].octaveDown();
+      }
   }
 
   public void octaveUp() {
-
+      for (int i = 0; i <this.n ; i++) {
+          this.SeqNotes[this.n].octaveUp();
+      }
   }
 
   public void append(Melody m) {
