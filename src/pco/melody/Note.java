@@ -25,10 +25,10 @@ public class Note {
      * duracao especificada. Para facilitar a
      * programacao no Melody.
      *
-     * @param duration  Duracao da nota, em double
-     * @param acc       Enumeracao da classe Acidente
-     * @param pitch     Enumeracao da classe Pitch
-     * @param octave    Oitava da nota, em int
+     * @param duration  Duracao da nota, em double.
+     * @param acc       Enumeracao da classe Acidente.
+     * @param pitch     Enumeracao da classe Pitch.
+     * @param octave    Oitava da nota, em int.
      */
 
 
