@@ -7,7 +7,7 @@ package pco.melody;
  * a seguir descritos deverao ser implementados
  *
  * @author Ana Espinheira
- * @author Francisco Pires
+ * @author Francisco Pires, fc44314
  * @version %I%, %G%
  * @since 1.0
  */
@@ -25,12 +25,8 @@ public class Note {
      * duracao especificada. Para facilitar a
      * programacao no Melody.
      *
-     * @param duration  Duracao da nota, em double.
-     * @param acc       Enumeracao da classe Acidente.
-     * @param pitch     Enumeracao da classe Pitch.
-     * @param octave    Oitava da nota, em int.
+     * @param duration Duracao da nota, em double.
      */
-
 
     public Note(double duration) {
 
@@ -42,10 +38,10 @@ public class Note {
      * uma sequencia de n notas, todas correspondentes
      * a um silencio de duracao 0.
      *
-     * @param duration  Duracao da nota, em double
-     * @param acc       Enumeracao da classe Acidente
-     * @param pitch     Enumeracao da classe Pitch
-     * @param octave    Oitava da nota, em int
+     * @param duration Duracao da nota, em double.
+     * @param pitch    Enumeracao da classe Pitch.
+     * @param octave   Oitava da nota, em int.
+     * @param acc      Enumeracao da classe Acidente.
      */
 
     public Note(double duration, Pitch pitch, int octave, Acc acc) {
