@@ -1,6 +1,16 @@
 package pco.melody;
 
-// missing append. Test2 works, needs more testing.
+/**
+ * A Classe Melody permite armazenar e manipular sequencias de notas, alem de ter associado um
+ * titulo e autor. Para armazenar as notas internamente devera apenas usar um vector ("array")
+ * do objecto Note. Alem disso, nao pode usar metodos da classe java.util.Arrays. Os metodos
+ * a seguir descritos deverao ser implementados
+ *
+ * @author Ana Espinheira
+ * @author Francisco Pires
+ * @version %I%, %G%
+ * @since 1.0
+ */
 
 public class Melody {
 
@@ -11,104 +21,103 @@ public class Melody {
     private String title;
     private String author;
 
-    // Construtor
 
-  public Melody(String title, String author, int n) {
+    public Melody(String title, String author, int n) {
 
-      Note[] SeqNotes = new Note[n];
+        Note[] SeqNotes = new Note[n];
 
-      for (int i = 0; i <n ; i++) {
-          SeqNotes[i] = new Note(0);
-      }
+        for (int i = 0; i < n; i++) {
+            SeqNotes[i] = new Note(0);
+        }
 
-      this.n=n;
-      this.title=title;
-      this.author=author;
-      this.SeqNotes=SeqNotes;
+        this.n = n;
+        this.title = title;
+        this.author = author;
+        this.SeqNotes = SeqNotes;
 
-  }
+    }
 
     // getters and setters
 
-  public String getTitle() {
-      return this.title;
-  }
+    public String getTitle() {
+        return this.title;
+    }
 
-  public void setTitle(String title) {
-      this.title=title;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public String getAuthor() {
-    return this.author;
-  }
+    public String getAuthor() {
+        return this.author;
+    }
 
-  public void setAuthor(String author) {
-    this.author=author;
-  }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-  public int notes() {
-    return this.n;
-  }
+    public int notes() {
+        return this.n;
+    }
 
-  public Note get(int index) {
-    return this.SeqNotes[index];
-  }
+    public Note get(int index) {
+        return this.SeqNotes[index];
+    }
 
-  public void set(int index, Note note) {
-      this.SeqNotes[index] = note;
-  }
+    public void set(int index, Note note) {
+        this.SeqNotes[index] = note;
+    }
 
-  public double getDuration() {
-      double dur = 0;
+    public double getDuration() {
+        double dur = 0;
 
-      for (int i = 0; i < this.n; i++) {
-          dur = dur + this.SeqNotes[i].getDuration();
-      }
-      return dur;
-  }
+        for (int i = 0; i < this.n; i++) {
+            dur = dur + this.SeqNotes[i].getDuration();
+        }
+        return dur;
+    }
 
-  public void reverse() {
-      for (int i = 0; i < this.n/2; i++) {
-          Note temp = this.SeqNotes[i];
-          this.SeqNotes[i]=this.SeqNotes[this.n - i - 1];
-          this.SeqNotes[this.n - i -1] = temp;
-      }
-  }
+    public void reverse() {
+        for (int i = 0; i < this.n / 2; i++) {
+            Note temp = this.SeqNotes[i];
+            this.SeqNotes[i] = this.SeqNotes[this.n - i - 1];
+            this.SeqNotes[this.n - i - 1] = temp;
+        }
+    }
 
-  public void changeTempo(double factor) {
-      for (int i = 0; i < this.n; i++) {
-          this.SeqNotes[this.n].changeTempo(factor);
-      }
-  }
+    public void changeTempo(double factor) {
+        for (int i = 0; i < this.n; i++) {
+            this.SeqNotes[this.n].changeTempo(factor);
+        }
+    }
 
-  public void octaveDown() {
-      for (int i = 0; i < this.n ; i++) {
-          this.SeqNotes[this.n].octaveDown();
-      }
-  }
+    public void octaveDown() {
+        for (int i = 0; i < this.n; i++) {
+            this.SeqNotes[this.n].octaveDown();
+        }
+    }
 
-  public void octaveUp() {
-      for (int i = 0; i <this.n ; i++) {
-          this.SeqNotes[this.n].octaveUp();
-      }
-  }
+    public void octaveUp() {
+        for (int i = 0; i < this.n; i++) {
+            this.SeqNotes[this.n].octaveUp();
+        }
+    }
 
-  public void append(Melody m) {
+    public void append(Melody m) {
 
-      Note[] tmp = new Note[this.n + m.notes()];
+        Note[] tmp = new Note[this.n + m.notes()];
 
-      for (int i=0; i < this.n-1; i++) {
-          tmp[i] = this.get(i);
-      }
+        for (int i = 0; i < this.n - 1; i++) {
+            tmp[i] = this.get(i);
+        }
 
-      for (int i = this.n-1; i < m.notes()-1; i++) {
-          tmp[i] = m.get(i);
-      }
+        for (int i = this.n - 1; i < m.notes() - 1; i++) {
+            tmp[i] = m.get(i);
+        }
 
-      Melody novoMelody = new Melody(this.author, this.author, this.n + m.notes());
+        Melody novoMelody = new Melody(this.author, this.author, this.n + m.notes());
 
-      for (int i = 0; i < m.notes()-1; i++) {
-          novoMelody.set(i, tmp[i]);
-      }
-  }
+        for (int i = 0; i < m.notes() - 1; i++) {
+            novoMelody.set(i, tmp[i]);
+        }
+    }
 }
