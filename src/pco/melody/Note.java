@@ -20,6 +20,17 @@ public class Note {
     private Pitch pitch;
     private double duration;
 
+    /**
+     * Constructor para silencio (Pitch.S) com a
+     * duracao especificada. Para facilitar a
+     * programacao no Melody.
+     *
+     * @param duration  Duracao da nota, em double
+     * @param acc       Enumeracao da classe Acidente
+     * @param pitch     Enumeracao da classe Pitch
+     * @param octave    Oitava da nota, em int
+     */
+
 
     public Note(double duration) {
 
