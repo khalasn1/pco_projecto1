@@ -1,6 +1,6 @@
 package pco.melody;
 
-// COMPLETE ESTA CLASSE ...
+// missing append. Test2 works, needs more testing.
 
 public class Melody {
 
@@ -12,8 +12,7 @@ public class Melody {
 
   public Melody(String title, String author, int n) {
 
-      Note[] SeqNotes;
-      SeqNotes = new Note[n];
+      Note[] SeqNotes = new Note[n];
 
       for (int i = 0; i <n ; i++) {
           SeqNotes[i] = new Note(0);
@@ -91,6 +90,6 @@ public class Melody {
   }
 
   public void append(Melody m) {
-
+    //TO COMPLETE
   }
 }

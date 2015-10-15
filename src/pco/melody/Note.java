@@ -1,6 +1,7 @@
 package pco.melody;
 
-// COMPLETE ESTA CLASSE
+// complete. Test1 works, missing more testing.
+
 public class Note {
 
     private Acc acc;
