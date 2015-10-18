@@ -11,6 +11,7 @@ import java.lang.String;
 /**
  * Melody I/O utility class.
  */
+
 public class MelodyIO {
 
 
@@ -18,6 +19,7 @@ public class MelodyIO {
 
 
         try {
+            Note temp;
             String title = ("");
             String author = ("");
             int notes = 0;
@@ -35,33 +37,38 @@ public class MelodyIO {
                 author = sc.nextLine();
             }
 
-            // set notes (third line)
+            // set number of notes (third line)
             if (sc.hasNextLine()) {
                 notes = Integer.parseInt(sc.nextLine());
             }
 
-            //iniciate melody
+            //iniciate melody (with the values already read
             Melody m = new Melody(title, author, notes);
 
             // set notes ( remaining lines )
-            int i=0;
+            int i = 0;
             while (sc.hasNextLine()) {
 
                 String line = sc.nextLine();
+                String[] lines= line.split("\\s");
 
-                line.split(" ");
+                if (lines.length == 2) {
+                    temp = new Note(Double.parseDouble(lines[0]));
+                }
+                else {
+                    temp = new Note(Double.parseDouble(lines[0]), Pitch.valueOf(lines[1]), Integer.parseInt(lines[2]), Acc.valueOf(lines[3]));
+                }
 
-                m.set(i, );
+                m.set(i, temp);
 
                 i++;
-
             }
             sc.close();
+            return m;
+
         } catch (FileNotFoundException e) {
             throw new IOException("File not found");
         }
-
-        return null;
     }
 
     public static void save(Melody melody, File file) throws IOException {

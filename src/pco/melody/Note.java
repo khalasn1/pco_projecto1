@@ -6,7 +6,7 @@ package pco.melody;
  * do objecto Note. Alem disso, nao pode usar metodos da classe java.util.Arrays. Os metodos
  * a seguir descritos deverao ser implementados
  *
- * @author Ana Espinheira
+ * @author Ana Espinheira, fc45810
  * @author Francisco Pires, fc44314
  * @version %I%, %G%
  * @since 1.0
@@ -25,7 +25,7 @@ public class Note {
      * duracao especificada. Para facilitar a
      * programacao no Melody.
      *
-     * @param duration Duracao da nota, em double.
+     * @param duration Duracao da nota.
      */
 
     public Note(double duration) {
@@ -38,10 +38,10 @@ public class Note {
      * uma sequencia de n notas, todas correspondentes
      * a um silencio de duracao 0.
      *
-     * @param duration Duracao da nota, em double.
-     * @param pitch    Enumeracao da classe Pitch.
-     * @param octave   Oitava da nota, em int.
-     * @param acc      Enumeracao da classe Acidente.
+     * @param duration Duracao da nota.
+     * @param pitch    Enumerado da classe Pitch.
+     * @param octave   Oitava da nota.
+     * @param acc      Enumerado da classe Acidente.
      */
 
     public Note(double duration, Pitch pitch, int octave, Acc acc) {
