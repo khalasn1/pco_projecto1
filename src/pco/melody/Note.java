@@ -80,13 +80,11 @@ public class Note {
     }
 
     public Note octaveDown() {
-
-        return new Note(this.duration, this.pitch, this.octave - 1, this.acc);
+        return new Note(this.duration, this.pitch, this.octave-1, this.acc);
     }
 
     public Note octaveUp() {
-
-        return new Note(this.duration, this.pitch, this.octave + 1, this.acc);
+        return new Note(this.duration, this.pitch, this.octave+1, this.acc);
     }
 
     public Note changeTempo(double factor) {

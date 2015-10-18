@@ -86,19 +86,19 @@ public class Melody {
 
     public void changeTempo(double factor) {
         for (int i = 0; i < this.n; i++) {
-            this.SeqNotes[this.n].changeTempo(factor);
+            set(i, this.SeqNotes[i].changeTempo(factor));
         }
     }
 
     public void octaveDown() {
         for (int i = 0; i < this.n; i++) {
-            this.SeqNotes[this.n].octaveDown();
+            set(i, this.SeqNotes[i].octaveDown());
         }
     }
 
     public void octaveUp() {
         for (int i = 0; i < this.n; i++) {
-            this.SeqNotes[this.n].octaveUp();
+            set(i, this.SeqNotes[i].octaveUp());
         }
     }
 
