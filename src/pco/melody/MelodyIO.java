@@ -41,12 +41,20 @@ public class MelodyIO {
             }
 
             //iniciate melody
-            System.out.println(title);
             Melody m = new Melody(title, author, notes);
 
             // set notes ( remaining lines )
+            int i=0;
             while (sc.hasNextLine()) {
-                String note = sc.nextLine();
+
+                String line = sc.nextLine();
+
+                line.split(" ");
+
+                m.set(i, );
+
+                i++;
+
             }
             sc.close();
         } catch (FileNotFoundException e) {
