@@ -17,15 +17,13 @@ public class MelodyIO {
 
     public static Melody load(File file) throws IOException {
 
-
         try {
-            Note temp;
+            Scanner sc = new Scanner(file);
+            sc.useLocale(Locale.ENGLISH);
             String title = ("");
             String author = ("");
             int notes = 0;
-
-            Scanner sc = new Scanner(file);
-            sc.useLocale(Locale.ENGLISH);
+            Note temp;
 
             // set title (first line)
             if (sc.hasNextLine()) {
@@ -42,25 +40,22 @@ public class MelodyIO {
                 notes = Integer.parseInt(sc.nextLine());
             }
 
-            //iniciate melody (with the values already read
+            //iniciate melody (with the values already read)
             Melody m = new Melody(title, author, notes);
 
-            // set notes ( remaining lines )
+            // set notes (remaining lines)
             int i = 0;
             while (sc.hasNextLine()) {
-
                 String line = sc.nextLine();
-                String[] lines= line.split("\\s");
+                String[] lines = line.split("\\s");
 
                 if (lines.length == 2) {
                     temp = new Note(Double.parseDouble(lines[0]));
-                }
-                else {
+                } else {
                     temp = new Note(Double.parseDouble(lines[0]), Pitch.valueOf(lines[1]), Integer.parseInt(lines[2]), Acc.valueOf(lines[3]));
                 }
 
                 m.set(i, temp);
-
                 i++;
             }
             sc.close();
@@ -72,19 +67,37 @@ public class MelodyIO {
     }
 
     public static void save(Melody melody, File file) throws IOException {
+
         try {
+
             PrintStream out = new PrintStream(file);
+            Note temp;
 
-            String i = melody.getAuthor();
+            out.println(melody.getTitle());
+            out.println(melody.getAuthor());
+            out.println(melody.notes());
 
+            for (int i = 0; i < melody.notes(); i++) {
+                temp = melody.get(i);
 
+                if (temp.getOctave() != 0 || temp.getAccidental() != null) {
+                    out.print(temp.getDuration() + " ");
+                    out.print(temp.getPitch() + " ");
+                    out.print(temp.getOctave() + " ");
+                    out.print(temp.getAccidental() + "\n");
+                }
+                else {
+                    out.print(temp.getDuration() + " ");
+                    out.print(temp.getPitch() + "\n");
+                }
+
+            }
             out.close();
         } catch (FileNotFoundException e) {
             throw new IOException("File not found");
         }
     }
 
-    // DEIXAR COMO ESTÁ
     private MelodyIO() {
     }
 }
