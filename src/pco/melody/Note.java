@@ -54,39 +54,76 @@ public class Note {
 
     // getters and setters
 
+    /**
+     *
+     * @return
+     */
     public Pitch getPitch() {
         return this.pitch;
     }
 
+    /**
+     *
+     * @return
+     */
     public Acc getAccidental() {
         return this.acc;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getOctave() {
         return this.octave;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getDuration() {
         return this.duration;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isSilence() {
         return this.pitch == Pitch.S;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
 
         return this.duration + " " + this.pitch + " " + this.octave + " " + this.acc;
     }
 
+    /**
+     *
+     * @return
+     */
     public Note octaveDown() {
         return new Note(this.duration, this.pitch, this.octave-1, this.acc);
     }
 
+    /**
+     *
+     * @return
+     */
     public Note octaveUp() {
         return new Note(this.duration, this.pitch, this.octave+1, this.acc);
     }
 
+    /**
+     *
+     * @param factor
+     * @return
+     */
     public Note changeTempo(double factor) {
 
         return new Note(this.duration * factor, this.pitch, this.octave, this.acc);

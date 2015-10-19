@@ -21,6 +21,12 @@ public class Melody {
     private String title;
     private String author;
 
+    /**
+     *
+     * @param title
+     * @param author
+     * @param n
+     */
 
     public Melody(String title, String author, int n) {
 
@@ -39,33 +45,74 @@ public class Melody {
 
     // getters and setters
 
+    /**
+     *
+     * @return
+     */
+
     public String getTitle() {
         return this.title;
     }
+
+    /**
+     *
+     * @param title
+     */
 
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     *
+     * @return
+     */
+
     public String getAuthor() {
         return this.author;
     }
+
+    /**
+     *
+     * @param author
+     */
 
     public void setAuthor(String author) {
         this.author = author;
     }
 
+    /**
+     *
+     * @return
+     */
+
     public int notes() {
         return this.n;
     }
 
+    /**
+     *
+     * @param index
+     * @return
+     */
     public Note get(int index) {
         return this.SeqNotes[index];
     }
 
+    /**
+     *
+     * @param index
+     * @param note
+     */
+
     public void set(int index, Note note) {
         this.SeqNotes[index] = note;
     }
+
+    /**
+     *
+     * @return
+     */
 
     public double getDuration() {
         double dur = 0;
@@ -76,6 +123,9 @@ public class Melody {
         return dur;
     }
 
+    /**
+     *
+     */
     public void reverse() {
         for (int i = 0; i < this.n / 2; i++) {
             Note temp = this.SeqNotes[i];
@@ -84,24 +134,38 @@ public class Melody {
         }
     }
 
+    /**
+     *
+     * @param factor
+     */
     public void changeTempo(double factor) {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].changeTempo(factor));
         }
     }
 
+    /**
+     *
+     */
     public void octaveDown() {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].octaveDown());
         }
     }
 
+    /**
+     *
+     */
     public void octaveUp() {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].octaveUp());
         }
     }
 
+    /**
+     *
+     * @param m
+     */
     public void append(Melody m) {
 
         Note[] tmp = new Note[this.n + m.notes()];

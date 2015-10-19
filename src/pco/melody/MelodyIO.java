@@ -15,6 +15,13 @@ import java.lang.String;
 public class MelodyIO {
 
 
+    /**
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */
+
     public static Melody load(File file) throws IOException {
 
         try {
@@ -66,6 +73,13 @@ public class MelodyIO {
             throw new IOException("File not found");
         }
     }
+
+    /**
+     *
+     * @param melody
+     * @param file
+     * @throws IOException
+     */
 
     public static void save(Melody melody, File file) throws IOException {
 
