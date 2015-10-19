@@ -138,6 +138,7 @@ public class Melody {
 
     /**
      * Reverte as notas da melodia
+     * Requires valous bewind 1 and 9
      *
      */
     public void reverse() {
@@ -162,6 +163,8 @@ public class Melody {
     /**
      * Aumenta uma octava em todas as notas
      *
+     * @pre i bewind 1 and 9
+     *
      */
     public void octaveDown() {
         for (int i = 0; i < this.n; i++) {
@@ -171,6 +174,8 @@ public class Melody {
 
     /**
      * Diminui uma octava em todas as notas
+     *
+     * @pre i bewind 1 and 9
      *
      */
     public void octaveUp() {
