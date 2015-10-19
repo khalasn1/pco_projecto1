@@ -1,7 +1,7 @@
 package pco.melody;
 
 /**
- * Note permite armazenar e manipular uma nota, baseado na duração,
+ * Note permite armazenar e manipular uma nota, baseado na duracao,
  * tipo, "acidente" e "oitava". Se a nota representar silencio, ignoramos
  * o "acidente" e a "oitava"
  *
