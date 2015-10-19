@@ -52,7 +52,8 @@ public class MelodyIO {
                 if (lines.length == 2) {
                     temp = new Note(Double.parseDouble(lines[0]));
                 } else {
-                    temp = new Note(Double.parseDouble(lines[0]), Pitch.valueOf(lines[1]), Integer.parseInt(lines[2]), Acc.valueOf(lines[3]));
+                    temp = new Note(Double.parseDouble(lines[0]), Pitch.valueOf(lines[1]),
+                            Integer.parseInt(lines[2]), Acc.valueOf(lines[3]));
                 }
 
                 m.set(i, temp);
@@ -85,8 +86,7 @@ public class MelodyIO {
                     out.print(temp.getPitch() + " ");
                     out.print(temp.getOctave() + " ");
                     out.print(temp.getAccidental() + "\n");
-                }
-                else {
+                } else {
                     out.print(temp.getDuration() + " ");
                     out.print(temp.getPitch() + "\n");
                 }

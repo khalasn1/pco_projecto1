@@ -106,18 +106,18 @@ public class Melody {
 
         Note[] tmp = new Note[this.n + m.notes()];
 
-        for (int i = 0; i < this.n - 1; i++) {
+        for (int i = 0; i < this.n; i++) {
             tmp[i] = this.get(i);
         }
 
-        for (int i = this.n - 1; i < m.notes() - 1; i++) {
+        for (int i = this.n - 1; i < m.notes(); i++) {
             tmp[i] = m.get(i);
         }
 
-        Melody novoMelody = new Melody(this.author, this.author, this.n + m.notes());
+        Melody novaMelody = new Melody(this.author, this.author, this.n + m.notes());
 
         for (int i = 0; i < m.notes() - 1; i++) {
-            novoMelody.set(i, tmp[i]);
+            novaMelody.set(i, tmp[i]);
         }
     }
 }
