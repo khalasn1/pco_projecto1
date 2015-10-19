@@ -18,7 +18,7 @@ public class MelodyIO {
     /**
      *
      * @param file
-     * @return
+     * @return Melody m
      * @throws IOException
      */
 

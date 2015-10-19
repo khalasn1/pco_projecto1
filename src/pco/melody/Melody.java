@@ -22,10 +22,13 @@ public class Melody {
     private String author;
 
     /**
+     * Constructor. Inicialmente, a melodia devera guardar
+     * uma sequencia de n notas, todas correspondentes
+     * a um silencio de duracao 0.
      *
-     * @param title
-     * @param author
-     * @param n
+     * @param title titulo da melodia
+     * @param author titulo do autor
+     * @param n numero de notas
      */
 
     public Melody(String title, String author, int n) {
@@ -154,8 +157,6 @@ public class Melody {
     }
 
     /**
-     *
-     */
     public void octaveUp() {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].octaveUp());

@@ -1,10 +1,9 @@
 package pco.melody;
 
 /**
- * A Classe Melody permite armazenar e manipular sequencias de notas, alem de ter associado um
- * titulo e autor. Para armazenar as notas internamente devera apenas usar um vector ("array")
- * do objecto Note. Alem disso, nao pode usar metodos da classe java.util.Arrays. Os metodos
- * a seguir descritos deverao ser implementados
+ * Note permite armazenar e manipular uma nota, baseado na duração,
+ * tipo, "acidente" e "oitava". Se a nota representar silencio, ignoramos
+ * o "acidente" e a "oitava"
  *
  * @author Ana Espinheira, fc45810
  * @author Francisco Pires, fc44314
