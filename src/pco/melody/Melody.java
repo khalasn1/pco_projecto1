@@ -183,7 +183,7 @@ public class Melody {
      * Acrescenta uma melodia ao fim de outra.
      * Atencao: cria uma nova melodia, visto que os arrays sao de tamanho fixo
      *
-     * @param m
+     * @param m nova melodia
      */
     public void append(Melody m) {
 
