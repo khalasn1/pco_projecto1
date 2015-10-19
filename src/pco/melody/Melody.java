@@ -163,7 +163,7 @@ public class Melody {
     /**
      * Aumenta uma octava em todas as notas
      *
-     * @pre i bewind 1 and 9
+     * @requires octaveDown > 0
      *
      */
     public void octaveDown() {
@@ -175,7 +175,7 @@ public class Melody {
     /**
      * Diminui uma octava em todas as notas
      *
-     * @pre i bewind 1 and 9
+     * @requires octaveUp > 0
      *
      */
     public void octaveUp() {
