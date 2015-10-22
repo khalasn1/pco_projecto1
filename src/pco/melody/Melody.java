@@ -188,24 +188,23 @@ public class Melody {
      * Acrescenta uma melodia ao fim de outra.
      * Atencao: cria uma nova melodia, visto que os arrays sao de tamanho fixo
      *
-     * @param m nova melodia
+     * @param m nova melodiathis.n = notes() + m.notes();
      */
     public void append(Melody m) {
 
-        Note[] tmp = new Note[this.n + m.notes()];
+        Note[] tmp = SeqNotes;
+        SeqNotes = new Note[notes() + m.notes()];
 
-        for (int i = 0; i < this.n; i++) {
-            tmp[i] = this.get(i);
+
+        for (int i = 0; i < this.n ; i++) {
+            SeqNotes[i] = tmp[i];
         }
 
-        for (int i = this.n - 1; i < m.notes(); i++) {
-            tmp[i] = m.get(i);
+        this.n = notes() + m.notes();
+
+        for (int i = 0; i < m.notes(); i++) {
+            SeqNotes[tmp.length+i] = m.get(i);
         }
 
-        Melody novaMelody = new Melody(this.author, this.author, this.n + m.notes());
-
-        for (int i = 0; i < m.notes() - 1; i++) {
-            novaMelody.set(i, tmp[i]);
-        }
     }
 }

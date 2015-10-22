@@ -55,7 +55,7 @@ public class MelodyIO {
             int i = 0;
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-                String[] lines = line.split("\\s");
+                String[] lines = line.split("\\s+");
 
                 if (lines.length == 2) {
                     temp = new Note(Double.parseDouble(lines[0]));
@@ -63,7 +63,6 @@ public class MelodyIO {
                     temp = new Note(Double.parseDouble(lines[0]), Pitch.valueOf(lines[1]),
                             Integer.parseInt(lines[2]), Acc.valueOf(lines[3]));
                 }
-
                 m.set(i, temp);
                 i++;
             }
