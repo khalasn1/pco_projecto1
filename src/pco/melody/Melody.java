@@ -7,7 +7,7 @@ package pco.melody;
  * a seguir descritos deverao ser implementados
  *
  * @author Ana Espinheira, 45810
- * @author Francisco Pires
+ * @author Francisco Pires, 44314
  * @version %I%, %G%
  * @since 1.0
  */

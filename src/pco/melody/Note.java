@@ -5,8 +5,8 @@ package pco.melody;
  * tipo, "acidente" e "oitava". Se a nota representar silencio, ignoramos
  * o "acidente" e a "oitava"
  *
- * @author Ana Espinheira, fc45810
- * @author Francisco Pires, fc44314
+ * @author Ana Espinheira, 45810
+ * @author Francisco Pires, 44314
  * @version %I%, %G%
  * @since 1.0
  */
