@@ -6,7 +6,7 @@ package pco.melody;
  * do objecto Note. Alem disso, nao pode usar metodos da classe java.util.Arrays. Os metodos
  * a seguir descritos deverao ser implementados
  *
- * @author Ana Espinheira
+ * @author Ana Espinheira, 45810
  * @author Francisco Pires
  * @version %I%, %G%
  * @since 1.0
