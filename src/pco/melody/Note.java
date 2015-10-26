@@ -15,6 +15,15 @@ package pco.melody;
 public class Note {
 
 
+    /**
+     * Atributos da classe Note.
+     * 
+     * acc - Acidente
+     * octave - Oitava
+     * duration - duracao da nota
+     * pitch - tipo de nota
+     */
+	
     private Acc acc;
     private int octave;
     private Pitch pitch;
@@ -55,35 +64,36 @@ public class Note {
     // getters and setters
 
     /**
-     * Retorna o Pitch de uma nota
+     * Retorna o Pitch de uma nota, que e um objecto da classe Pitch
      *
-     * @return objecto pitch da classe Pitch
+     * @return atributo pitch
      */
     public Pitch getPitch() {
         return this.pitch;
     }
 
     /**
-     * Retorna o Acidente de uma nota
+     * Retorna o Acidente de uma nota, que e um objecto classe Acc
      *
-     * @return objecto acc da classe Acc
+     * @return atributo acc
      */
     public Acc getAccidental() {
         return this.acc;
     }
 
     /**
+     * Retorna a "oitava" de uma nota, em int
      *
-     * @return
+     * @return atributo octave
      */
     public int getOctave() {
         return this.octave;
     }
 
     /**
-     * Retorna a duracao de uma nota
+     * Retorna a duracao de uma nota, em double
      *
-     * @return variavel int do objecto
+     * @return atributo duration
      */
     public double getDuration() {
         return this.duration;
