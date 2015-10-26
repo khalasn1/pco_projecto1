@@ -3,8 +3,7 @@ package pco.melody;
 /**
  * Melody permite armazenar e manipular sequencias de notas, alem de ter associado um
  * titulo e autor. Para armazenar as notas internamente devera apenas usar um vector ("array")
- * do objecto Note. Alem disso, nao pode usar metodos da classe java.util.Arrays. Os metodos
- * a seguir descritos deverao ser implementados
+ * do objecto Note. Nao foram utilizados metodos da classe java.util.Arrays.
  *
  * @author Ana Espinheira, 45810
  * @author Francisco Pires, 44314
@@ -53,7 +52,7 @@ public class Melody {
     /**
      * Retorna o titulo da melodia
      *
-     * @return title
+     * @return string titulo da melodia
      */
 
     public String getTitle() {
@@ -63,7 +62,7 @@ public class Melody {
     /**
      * Define o titulo da melodia
      *
-     * @param title
+     * @param title novo titulo da melodia
      */
 
     public void setTitle(String title) {
@@ -73,7 +72,7 @@ public class Melody {
     /**
      * Retorna o autor da melodia
      *
-     * @return author
+     * @return string autor da melodia
      */
 
     public String getAuthor() {
@@ -83,7 +82,7 @@ public class Melody {
     /**
      * Define o autor da melodia
      *
-     * @param author
+     * @param author  novo autor da melodia
      */
 
     public void setAuthor(String author) {
@@ -93,7 +92,7 @@ public class Melody {
     /**
      * Retorna o numero de notas da melodia
      *
-     * @return n
+     * @return numero de notas em int.
      */
 
     public int notes() {
@@ -103,18 +102,18 @@ public class Melody {
     /**
      * Retorna uma nota da melodia, dado um index
      *
-     * @param index
-     * @return Note[index]
+     * @param index index para retornar
+     * @return o index do array que contem a sequencia de notas
      */
     public Note get(int index) {
         return this.SeqNotes[index];
     }
 
     /**
-     * Define uma nota da melodia, dado um index
+     * Insire uma nota nova na melodia
      *
-     * @param index
-     * @param note
+     * @param index posicao onde a nota vai ser introduzida
+     * @param note nota que vai ser introduzida
      */
 
     public void set(int index, Note note) {
@@ -124,7 +123,7 @@ public class Melody {
     /**
      * Retorna a duracao da melodia
      *
-     * @return duration
+     * @return duracao em double
      */
 
     public double getDuration() {
@@ -137,8 +136,7 @@ public class Melody {
     }
 
     /**
-     * Reverte as notas da melodia
-     * Requires valous bewind 1 and 9
+     * Reverte as notas do objecto melody
      *
      */
     public void reverse() {
@@ -152,7 +150,7 @@ public class Melody {
     /**
      * Muda o "tempo" da melodia
      *
-     * @param factor
+     * @param factor valor double para executar o metodo changeTempo da classe Note
      */
     public void changeTempo(double factor) {
         for (int i = 0; i < this.n; i++) {
@@ -163,7 +161,7 @@ public class Melody {
     /**
      * Aumenta uma octava em todas as notas
      *
-     * @requires octaveDown > 0
+     * @requires octaveDown > 0 && octaveUp < 9
      *
      */
     public void octaveDown() {
@@ -175,7 +173,7 @@ public class Melody {
     /**
      * Diminui uma octava em todas as notas
      *
-     * @requires octaveUp > 0
+     * @requires octaveUp > 0 && octaveUp < 9
      *
      */
     public void octaveUp() {
@@ -186,9 +184,9 @@ public class Melody {
 
     /**
      * Acrescenta uma melodia ao fim de outra.
-     * Atencao: cria uma nova melodia, visto que os arrays sao de tamanho fixo
+     * Atencao: cria uma novo SeqNotes, visto que os arrays sao de tamanho fixo.
      *
-     * @param m nova melodiathis.n = notes() + m.notes();
+     * @param m nova melodia (this.n = notes() + m.notes();)
      */
     public void append(Melody m) {
 

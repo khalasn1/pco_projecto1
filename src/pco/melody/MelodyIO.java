@@ -9,18 +9,29 @@ import java.util.Scanner;
 import java.lang.String;
 
 /**
- * Melody I/O utility class.
+ * Melody I/O permite carregar e gravar uma melodia de/para um ficheiro, usando a classe Note e Melody.
+ * Tal como indicado no enunciado, foi utilizado os objectos Scanner (para o load) e o PrintScanner (para o save).
+ * Os ficheiros devem ser gravados/carregados com o  formato visto nos ficheiros na directoria exemples ou no enunciado.
+ *
+ * @author Ana Espinheira, 45810
+ * @author Francisco Pires, 44314
+ * @version %I%, %G%
+ * @since 1.0
  */
 
 public class MelodyIO {
 
+    /**
+     * metodos nesta classe: load e save
+     */
+
 
     /**
-     * Construtor
+     * Carrega um ficheiro (file), retornando um objecto melodia.
      *
-     * @param file
-     * @return Melody m
-     * @throws IOException
+     * @param file ficheiro para leitura
+     * @return m objecto do tipo Melody.
+     * @throws IOException Se o ficheiro nao for encontrado/nao permitido aceder.
      */
 
     public static Melody load(File file) throws IOException {
@@ -75,10 +86,11 @@ public class MelodyIO {
     }
 
     /**
+     * Salva um objecto melody para um ficheiro (file.txt)
      *
-     * @param melody
-     * @param file
-     * @throws IOException
+     * @param melody objecto melody que queremos salvar
+     * @param file ficheiro onde vai ser guardado
+     * @throws IOException Se o ficheiro nao for encontrado/nao permitido aceder.
      */
 
     public static void save(Melody melody, File file) throws IOException {

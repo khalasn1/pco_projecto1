@@ -3,7 +3,8 @@ package pco.melody;
 /**
  * Note permite armazenar e manipular uma nota, baseado na duracao,
  * tipo, "acidente" e "oitava". Se a nota representar silencio, ignoramos
- * o "acidente" e a "oitava"
+ * o "acidente" e a "oitava". Foi "previsto" dois construtores nesta classe
+ * como vai ser explicado mais a frente.
  *
  * @author Ana Espinheira, 45810
  * @author Francisco Pires, 44314
@@ -54,16 +55,18 @@ public class Note {
     // getters and setters
 
     /**
+     * Retorna o Pitch de uma nota
      *
-     * @return
+     * @return objecto pitch da classe Pitch
      */
     public Pitch getPitch() {
         return this.pitch;
     }
 
     /**
+     * Retorna o Acidente de uma nota
      *
-     * @return
+     * @return objecto acc da classe Acc
      */
     public Acc getAccidental() {
         return this.acc;
@@ -78,24 +81,27 @@ public class Note {
     }
 
     /**
+     * Retorna a duracao de uma nota
      *
-     * @return
+     * @return variavel int do objecto
      */
     public double getDuration() {
         return this.duration;
     }
 
     /**
+     * Booleano para verificar se a nota e silenciosa
      *
-     * @return
+     * @return boolean true if pitch == Pitch.S
      */
     public boolean isSilence() {
         return this.pitch == Pitch.S;
     }
 
     /**
+     * Representacao textual da nota, de acordo com a seccao 5 do enunciado
      *
-     * @return
+     * @return string
      */
     public String toString() {
 
@@ -103,25 +109,28 @@ public class Note {
     }
 
     /**
+     * Cria uma nova nota, uma octava mais baixa
      *
-     * @return
+     * @return novo objecto Note
      */
     public Note octaveDown() {
         return new Note(this.duration, this.pitch, this.octave-1, this.acc);
     }
 
     /**
+     * Cria uma nova nota, uma octava mais alta
      *
-     * @return
+     * @return novo objecto Note
      */
     public Note octaveUp() {
         return new Note(this.duration, this.pitch, this.octave+1, this.acc);
     }
 
     /**
+     * Cria uma nova nota, com um "tempo" diferente
      *
-     * @param factor
-     * @return
+     * @param factor valor double para multiplicar na duration
+     * @return novo objecto Note
      */
     public Note changeTempo(double factor) {
 
