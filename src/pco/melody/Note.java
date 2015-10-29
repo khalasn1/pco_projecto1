@@ -17,16 +17,22 @@ public class Note {
 
     /**
      * Atributos da classe Note.
-     * 
-     * acc - Acidente
-     * octave - Oitava
-     * duration - duracao da nota
-     * pitch - tipo de nota
      */
-	
+    /**
+     * Acidente do tipo Acc
+     */
     private Acc acc;
+    /**
+     * Oitava do tipo int
+     */
     private int octave;
+    /**
+     * tipo de nota do tipo Pitch
+     */
     private Pitch pitch;
+    /**
+     * duracao da nota
+     */
     private double duration;
 
     /**
@@ -115,7 +121,12 @@ public class Note {
      */
     public String toString() {
 
-        return this.duration + " " + this.pitch + " " + this.octave + " " + this.acc;
+        if (this.pitch == Pitch.S) {
+            return this.duration + " " + this.pitch;
+        }
+        else {
+            return this.duration + " " + this.pitch + " " + this.octave + " " + this.acc;
+        }
     }
 
     /**

@@ -17,9 +17,21 @@ public class Melody {
      * Atributos da Melodia
      */
 
+    /**
+     * Sequencia de notas do tipo Note;
+     */
     private Note[] SeqNotes;
+    /**
+     * Numero de notas;
+     */
     private int n;
+    /**
+     * titulo da melodia
+     */
     private String title;
+    /**
+     * autor da melodia
+     */
     private String author;
 
     /**
@@ -160,10 +172,9 @@ public class Melody {
 
     /**
      * Aumenta uma octava em todas as notas
-     *
-     * @requires octaveDown > 0 && octaveUp < 9
-     *
      */
+
+    // @requires octaveDown > 0 && octaveUp < 9
     public void octaveDown() {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].octaveDown());
@@ -172,10 +183,9 @@ public class Melody {
 
     /**
      * Diminui uma octava em todas as notas
-     *
-     * @requires octaveUp > 0 && octaveUp < 9
-     *
      */
+
+    // @requires octaveUp > 0 && octaveUp < 9
     public void octaveUp() {
         for (int i = 0; i < this.n; i++) {
             set(i, this.SeqNotes[i].octaveUp());
