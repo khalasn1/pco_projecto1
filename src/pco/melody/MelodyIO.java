@@ -1,7 +1,6 @@
 package pco.melody;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Locale;
@@ -80,7 +79,7 @@ public class MelodyIO {
             sc.close();
             return m;
 
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new IOException("File not found");
         }
     }
@@ -119,7 +118,7 @@ public class MelodyIO {
 
             }
             out.close();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new IOException("File not found");
         }
     }
